@@ -55,11 +55,15 @@ void insertionSortXor(int arr[], int size) {
 void insertionSortShift(int arr[], int size) {
     for (int i = 1; i < size; i++) {
         int j = i;
+        // Store the comparison key at a temporary variable
         int temp = arr[i];
         while (j > 0 && temp < arr[j - 1]) {
+            // Shift any elements larger than the comparison key that are at its
+            // left hand side to the right
             arr[j] = arr[j - 1];
             j--;
         }
+        // Place the comparison key at the location where the iteration stops
         arr[j] = temp;
     }
 }
